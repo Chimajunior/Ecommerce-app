@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+#root{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: none;
+
+}
+
+@theme {
+    --color-ecom-red: #ea2e0e;
+}
