@@ -9,6 +9,12 @@ const SearchBar = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log("Search Term:", searchTerm)
+    setIsOpen(false)
+  }
+
   return (
     <div
       className={`flex items-center justify-center w-full transition-all duration-300 ${
@@ -16,14 +22,19 @@ const SearchBar = () => {
       } `}
     >
       {isOpen ? (
-        <form className="relative flex items-center justify-center w-full">
+        <form
+          onSubmit={handleSearch}
+          className="relative flex items-center justify-center w-full"
+        >
           <div className="relative w-1/2">
             <input
               type="text"
               placeholder="Search"
               value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="bg-gray-100 px-4 py-2 pl-2 pr-12 rounded-lg focus:outline-none w-full placeholder:text-gray-700"
             />
+
             {/* search icon */}
             <button
               type="submit"
@@ -32,6 +43,7 @@ const SearchBar = () => {
               <HiMagnifyingGlass className="h-6 w-6" />
             </button>
           </div>
+
           {/* close button */}
           <button
             type="button"
