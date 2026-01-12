@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HiMagnifyingGlass } from "react-icons/hi2";
+import { HiMagnifyingGlass, HiMiniXMark } from "react-icons/hi2";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,6 +32,14 @@ const SearchBar = () => {
               <HiMagnifyingGlass className="h-6 w-6" />
             </button>
           </div>
+          {/* close button */}
+          <button
+            type="button"
+            onClick={handleSearchToggle}
+            className="absolute right-4 top-1/2 -transform-y-1/2 text-gray-600 hover:text-gray-800"
+          >
+            <HiMiniXMark className="h-6 w-6" />
+          </button>
         </form>
       ) : (
         <button onClick={handleSearchToggle}>
