@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import {IoMdClose} from "react-icons/io"
 
 const CartDrawer = ({drawerOpen, toggleCartDrawer}) => {
@@ -13,6 +12,16 @@ const CartDrawer = ({drawerOpen, toggleCartDrawer}) => {
         <IoMdClose className="h-6 w-6 text-gray-600" />
       </button>
       </div>
+
+      {/* Cart contents with scrollable area */}
+      <div className="grow p-4 overflow-y-auto">
+        <h2 className="text-xl font-semibold mb-4">Your Cart </h2>
+
+     
+      </div>
+
+      
+
     </div>
   );
 };
