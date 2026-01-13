@@ -1,4 +1,8 @@
 import React from "react";
+import { IoLogoInstagram } from "react-icons/io5";
+import { RiTwitterXFill } from "react-icons/ri";
+import { TbBrandMeta } from "react-icons/tb";
+import { FiPhoneCall } from "react-icons/fi";
 import { Link } from "react-router";
 
 const Footer = () => {
@@ -100,6 +104,48 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+
+        {/* Follow us */}
+        <div>
+          <h3 className="text-lg text-gray-800 mb-4">Follow Us</h3>
+          <div className="flex items-center space-x-4 mb-6">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferer"
+              className="hover:text-gray-300"
+            >
+              <TbBrandMeta className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferer"
+              className="hover:text-gray-300"
+            >
+              <IoLogoInstagram className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferer"
+              className="hover:text-gray-300"
+            >
+              <RiTwitterXFill className="h-5 w-5" />
+            </a>
+          </div>
+          <p className="text-gray-500">Call Us</p>
+          <p>
+            <FiPhoneCall className="inline-block mr-2" />
+          0123-456-789
+          </p>
+        </div>
+      </div>
+      {/* Footer Bottom */}
+      <div className="container mx-auto mt-12 px-4 lg:px-0 border-t border-gray-200 pt-6 ">
+        <p className="text-gray-500 text-sm tracking-tighter text-center">
+        © {new Date().getFullYear()} Chimtech. All rights reserved.
+        </p>
       </div>
     </footer>
   );
