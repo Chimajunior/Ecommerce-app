@@ -64,7 +64,7 @@ const Footer = () => {
               {" "}
               <Link to="#" className="hover:text-gray-500 transitions-colors">
                 {" "}
-                Women's top Wear
+                Women's Bottom Wear
               </Link>
             </li>
           </ul>
