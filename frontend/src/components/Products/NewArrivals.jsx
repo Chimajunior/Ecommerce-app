@@ -112,7 +112,8 @@ const NewArrivals = () => {
 
     if (container) {
       const leftScroll = container.scrollLeft;
-      const rightScrollable = container.scrollWidth > leftScroll + container.clientWidth;
+      const rightScrollable =
+        container.scrollWidth > leftScroll + container.clientWidth;
 
       setCanScrollLeft(leftScroll > 0);
       setCanScrollRight(rightScrollable);
@@ -145,11 +146,22 @@ const NewArrivals = () => {
         <div className="absolute right-0 bottom-[-30px] flex space-x-2">
           <button
             onClick={() => scroll("left")}
-            className={`p-2 rounded border ${canScrollLeft ? "bg-white text-black" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
+            className={`p-2 rounded border ${
+              canScrollLeft
+                ? "bg-white text-black"
+                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+            }`}
           >
             <FiChevronLeft className="text-2xl" />
           </button>
-          <button className={`p-2 rounded border ${canScrollRight ? "bg-white text-black" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}>
+          <button
+            onClick={() => scroll("right")}
+            className={`p-2 rounded border ${
+              canScrollRight
+                ? "bg-white text-black"
+                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+            }`}
+          >
             <FiChevronRight className="text-2xl" />
           </button>
         </div>
@@ -159,6 +171,9 @@ const NewArrivals = () => {
       <div
         ref={scrollRef}
         className="container mx-auto overflow-x-scroll flex space-x-6 relative"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUpOrLeave}
       >
         {newArrivals.map((product) => (
           <div
