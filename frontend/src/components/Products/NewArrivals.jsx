@@ -107,7 +107,17 @@ const NewArrivals = () => {
     setScrollLeft(scrollRef.current.scrollLeft)
   }
 
-  
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = x - startX;
+    scrollRef.current.scrollLeft = scrollLeft - walk; 
+  };
+
+  const handleMouseUpOrLeave = (e) = {
+
+  }
+
   const scroll = (direction) => {
     const scrollAmount = direction === "left" ? -300 : 300;
     scrollRef.current.scrollBy({ left: scrollAmount, behaviour: "smooth" });
