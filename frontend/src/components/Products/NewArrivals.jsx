@@ -114,8 +114,8 @@ const NewArrivals = () => {
     scrollRef.current.scrollLeft = scrollLeft - walk; 
   };
 
-  const handleMouseUpOrLeave = (e) = {
-
+  const handleMouseUpOrLeave = (e) => {
+    setIsDragging(false);
   }
 
   const scroll = (direction) => {
