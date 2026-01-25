@@ -23,15 +23,13 @@ const selectedProduct = {
 
 const ProductDetails = () => {
   const [mainImage, setMainImage] = useState("");
-  
+
   useEffect(() => {
-    if(selectedProduct?.images?.length > 0){
+    if (selectedProduct?.images?.length > 0) {
       setMainImage(selectedProduct.images[0].url);
     }
-  
-    
-  },[selectedProduct])
-  
+  }, [selectedProduct]);
+
   return (
     <div className="p-6">
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-lg">
@@ -43,7 +41,9 @@ const ProductDetails = () => {
                 key={index}
                 src={image.url}
                 alt={image.altText || `Thumbnail ${index}`}
-                className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
+                className={`w-20 h-20 object-cover rounded-lg cursor-pointer border ${
+                  mainImage === image.url ? "border-black" : "border-gray-300"
+                }`}
                 onClick={() => setMainImage(image.url)}
               />
             ))}
@@ -65,7 +65,10 @@ const ProductDetails = () => {
                 key={index}
                 src={image.url}
                 alt={image.altText || `Thumbnail ${index}`}
-                className="w-20 h-20 object-cover rounded-lg cursor-pointer border "
+                className={`w-20 h-20 object-cover rounded-lg cursor-pointer border ${
+                  mainImage === image.url ? "border-black" : "border-gray-300"
+                }`}
+                onClick={() => setMainImage(image.url)}
               />
             ))}
           </div>
@@ -131,18 +134,18 @@ const ProductDetails = () => {
 
             <div className="mt-10 text-gray-700">
               <h3 className="tect-xl font-bold mb-4">Characteristics:</h3>
-                <table className="w-full text-left text-sm text-gray-600">
-                  <tbody>
-                    <tr>
-                      <td className="py-1">Brand</td>
-                      <td className="py-1">{selectedProduct.brand}</td>
-                    </tr>
-                    <tr>
-                      <td className="py-1">Material</td>
-                      <td className="py-1">{selectedProduct.material}</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <table className="w-full text-left text-sm text-gray-600">
+                <tbody>
+                  <tr>
+                    <td className="py-1">Brand</td>
+                    <td className="py-1">{selectedProduct.brand}</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1">Material</td>
+                    <td className="py-1">{selectedProduct.material}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
