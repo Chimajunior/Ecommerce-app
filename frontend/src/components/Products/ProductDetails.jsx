@@ -31,9 +31,17 @@ const ProductDetails = () => {
                  key={index}
                 src={image.url}
                 alt={image.altText || `Thumbnail ${index}`}
+                className="w-20 h-20 object-cover rounded-lg cursor-pointer border "
               />
             ))}
           </div>
+          {/* Main Image */}
+          <div className="md:w-1/2">
+            <div className="mb-4">
+              <img src={selectedProduct.images[0]?.url} alt="Main Product" className="w-full; h-auto object-cover rounded-lg" />
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
